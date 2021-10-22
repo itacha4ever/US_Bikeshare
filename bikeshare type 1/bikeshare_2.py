@@ -2,18 +2,18 @@ import time
 import pandas as pd
 import numpy as np
 
-CITY_DATA = {'chi': 'chicago.csv',
-             'ny': 'new_york_city.csv',
-             'dc': 'washington.csv'}
-months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'all']
-days = ['sat', 'sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'all']
+CITY_DATA = {'chicago': 'chicago.csv',
+             'new york city': 'new_york_city.csv',
+             'washington': 'washington.csv'}
+months = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
+days = ['saturday', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'all']
 
 
 def get_filter_city():
     """ Get the filter of the City """
     while True:
         city = input("Please enter one of the following cities you want to see data for:"
-                     "\n-chi for Chicago\n-ny for New York\n-dc for Washington\n:-").lower()
+                     "\n- Chicago\n- New York\n-Washington\n:-").lower()
         if city in CITY_DATA.keys():
             break
         else:
@@ -24,8 +24,8 @@ def get_filter_city():
 def get_filter_month():
     """ Get the filter of the Months """
     while True:
-        month = input("Please enter a Month name from January to June or All Months bu using abbreviation of month "
-                      "names:\n-jan\n-feb\n-mar\n-apr\n-may\n-jun\n-all\n:-").lower()
+        month = input("Please enter a Month name from January to June or Choose All for All Months by using of month "
+                      "\n:-").lower()
         if month in months:
             break
         else:
@@ -36,8 +36,8 @@ def get_filter_month():
 def get_filter_day():
     """ Get the filter of the days """
     while True:
-        day = input("Please enter a Day of the week or Choose All Days by use the abbreviation of days names "
-                    "::\n-sat\n-sun\n-mon\n-tue\n-wed\n-thu\n-fri\n-all \n:-").lower()
+        day = input("Please enter a Day of the week or Choose All for All Days by use the days names "
+                    "\n:-").lower()
         if day in days:
             break
         else:
@@ -194,7 +194,6 @@ def user_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
-
 
 
 def display_raw_data(df):
